@@ -13,4 +13,8 @@ class State extends Model
         'indice', 
     ];
     public $timestamps = false;
+    public function orders()
+{
+    return $this->hasMany(Order::class);
+}
 }
