@@ -1,2 +1,9 @@
 # Shopping
  Tp Shopping
+ 
+<h1>Installer le composant séparément :</h1>
+
+1- composer create-project --prefer-dist laravel/laravel shopping </br>
+2- composer require laravel/ui </br>
+3- php artisan ui bootstrap --auth </br>
+4- npm install </br>
