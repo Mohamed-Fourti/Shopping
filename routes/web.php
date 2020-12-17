@@ -35,4 +35,6 @@ Route::prefix('passe')->group(function () {
     Route::post('renouvellement', 'Auth\ResetPasswordController@reset')->name('password.update');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::name('produits.show')->get('produits/{produit}', 'ProductController');
+Route::resource('panier', 'CartController')->only(['index', 'store', 'update', 'destroy']);
