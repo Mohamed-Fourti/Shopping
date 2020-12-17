@@ -7,3 +7,4 @@
 2- composer require laravel/ui </br>
 3- php artisan ui bootstrap --auth </br>
 4- npm install </br>
+4- composer require darryldecode/cart </br>
