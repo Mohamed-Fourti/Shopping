@@ -57,8 +57,8 @@ Route::middleware('auth')->group(function () {
             'create' => 'commandes.create',
             'store' => 'commandes.store',
         ])->only(['create', 'store']);
+        Route::name('commandes.payment')->post('paiement/{order}', 'PaymentController');
     });
   });
-
 
   
