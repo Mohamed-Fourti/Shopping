@@ -52,9 +52,13 @@ Route::middleware('auth')->group(function () {
     // Commandes
     Route::prefix('commandes')->group(function () {
         Route::name('commandes.details')->post('details', 'DetailsController');
+        Route::name('commandes.confirmation')->get('confirmation/{order}', 'OrdersController@confirmation');
         Route::resource('/', 'OrderController')->names([
             'create' => 'commandes.create',
             'store' => 'commandes.store',
         ])->only(['create', 'store']);
     });
   });
+
+
+  
