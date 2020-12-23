@@ -8,3 +8,5 @@
 3- php artisan ui bootstrap --auth </br>
 4- npm install </br>
 4- composer require darryldecode/cart </br>
+4- composer require stripe/stripe-php </br>
+6- composer require barryvdh/laravel-dompdf </br>

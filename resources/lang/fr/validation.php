@@ -135,6 +135,12 @@ return [
         ],
     ],
 
+    'values' => [
+        'professionnal' => [
+            'on' => 'active',
+        ],
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes
@@ -150,7 +156,7 @@ return [
         'name'                  => 'nom',
         'username'              => "nom d'utilisateur",
         'email'                 => 'adresse email',
-        'first_name'            => 'prénom',
+        'firstname'            => 'prénom',
         'last_name'             => 'nom',
         'password'              => 'mot de passe',
         'password_confirmation' => 'confirmation du mot de passe',
@@ -176,5 +182,7 @@ return [
         'time'                  => 'heure',
         'available'             => 'disponible',
         'size'                  => 'taille',
+        'professionnal'         => 'adresse professionnelle',
+        'company'               => 'raison sociale',
     ],
 ];
