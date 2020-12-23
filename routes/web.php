@@ -13,7 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Accueil boutique et panier
 Route::get('/', 'HomeController@index')->name('home');
+Route::name('produits.show')->get('produits/{produit}', 'ProductController');
+Route::resource('panier', 'CartController')->only(['index', 'store', 'update', 'destroy']);
+
 Route::post('deconnexion', 'Auth\LoginController@logout')->name('logout');
 Route::middleware('guest')->group(function () {
     Route::prefix('connexion')->group(function () {
@@ -33,22 +37,17 @@ Route::prefix('passe')->group(function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::name('produits.show')->get('produits/{produit}', 'ProductController');
-Route::resource('panier', 'CartController')->only(['index', 'store', 'update', 'destroy']);
 
 // Utilisateur authentifié
 Route::middleware('auth')->group(function () {
-  // Commandes
-  Route::prefix('commandes')->group(function () {
-      Route::resource('/', 'OrderController')->names([
-          'create' => 'commandes.create',
-          'store' => 'commandes.store',
-      ])->only(['create', 'store']);
-  });
-});
-
-// Utilisateur authentifié
-Route::middleware('auth')->group(function () {
+    // Gestion du compte
+    Route::prefix('compte')->group(function () {
+        Route::name('account')->get('/', 'AccountController');
+        Route::name('identite.edit')->get('identite', 'IdentiteController@edit');
+        Route::name('identite.update')->put('identite', 'IdentiteController@update');
+        Route::name('rgpd')->get('rgpd', 'IdentiteController@rgpd');
+        Route::name('rgpd.pdf')->get('rgpd/pdf', 'IdentiteController@pdf');
+    });
     // Commandes
     Route::prefix('commandes')->group(function () {
         Route::name('commandes.details')->post('details', 'DetailsController');
@@ -59,6 +58,4 @@ Route::middleware('auth')->group(function () {
         ])->only(['create', 'store']);
         Route::name('commandes.payment')->post('paiement/{order}', 'PaymentController');
     });
-  });
-
-  
+});
