@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Administration
+Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function () {
+    Route::name('admin')->get('/', 'AdminController@index');
+    Route::name('read')->put('read/{type}', 'AdminController@read');
+});
+
 // Accueil boutique et panier
 Route::get('/', 'HomeController@index')->name('home');
 Route::name('produits.show')->get('produits/{produit}', 'ProductController');
@@ -37,6 +43,7 @@ Route::prefix('passe')->group(function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('page/{page:slug}', 'HomeController@page')->name('page');
 
 // Utilisateur authentifié
 Route::middleware('auth')->group(function () {
