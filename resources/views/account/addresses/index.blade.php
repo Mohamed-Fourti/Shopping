@@ -42,8 +42,9 @@
 
       document.addEventListener('DOMContentLoaded', () => {
         @if(session()->has('alert'))
-          M.toast({ html: '{{ session(',alert,') }}' });
+          M.toast({ html: '{{ session('alert') }}' });
         @endif
+
         const deleteButtons = document.querySelectorAll('.delete');
         deleteButtons.forEach( button => {
           button.addEventListener('click', e => {

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ { Address, Country, State, Product };
+use App\Models\ { Address, Country, Shop, State, Product, User, Page };
 use App\Services\Shipping;
 use Illuminate\Support\Str;
 use Cart;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\{ NewOrder, ProductAlert, Ordered };
 
 class OrderController extends Controller
 {
@@ -106,7 +108,11 @@ class OrderController extends Controller
             $product->save();
             // Alerte stock
             if($product->quantity <= $product->quantity_alert) {
-                // Notifications à prévoir pour les administrateurs
+                $shop = Shop::firstOrFail();
+                $admins = User::whereAdmin(true)->get();
+                foreach($admins as $admin) {
+                    Mail::to($admin)->send(new ProductAlert($shop, $product));
+                }  
             }
         }
 
@@ -114,7 +120,17 @@ class OrderController extends Controller
         Cart::clear();
         Cart::session($request->user())->clear();
 
-        // Notifications à prévoir pour les administrateurs et l'utilisateur
+        // Notification à l'administrateur
+        $shop = Shop::firstOrFail();
+        $admins = User::whereAdmin(true)->get();
+        foreach($admins as $admin) {
+            Mail::to($admin)->send(new NewOrder($shop, $order, $user));
+            // On ajoutera une notification ici
+        }        
+                
+        // Notification au client
+        $page = Page::whereSlug('conditions-generales-de-vente')->first();
+        Mail::to($request->user())->send(new Ordered($shop, $order, $page));
 
         return redirect(route('commandes.confirmation', $order->id));
     }

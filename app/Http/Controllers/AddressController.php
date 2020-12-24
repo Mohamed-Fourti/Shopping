@@ -45,7 +45,7 @@ class AddressController extends Controller
     {
         $storeAddress->merge(['professionnal' => $storeAddress->has('professionnal')]);
         $storeAddress->user()->addresses()->create($storeAddress->all());
-        return redirect(route('adresses.index'))->with('alert', config('messages.addresssaved'));
+        return redirect(route('adresses.index'))->with('alert', "L'adresse a bien été enregistrée.");
     }
 
     /**
@@ -78,7 +78,7 @@ class AddressController extends Controller
 
         $adress->update($storeAddress->all());
 
-        return redirect(route('adresses.index'))->with('alert', config('messages.addressupdated')); 
+        return redirect(route('adresses.index'))->with('alert', "L'adresse a bien été modifiée."); 
     }
 
     /**
@@ -93,6 +93,6 @@ class AddressController extends Controller
 
         $adress->delete();
 
-        return back()->with('alert', config('messages.addressdeleted'));
+        return back()->with('alert', "L'adresse a bien été supprimée.");
     }
 }
