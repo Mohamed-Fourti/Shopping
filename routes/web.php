@@ -37,6 +37,7 @@ Route::prefix('passe')->group(function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('page/{page:slug}', 'HomeController@page')->name('page');
 
 // Utilisateur authentifié
 Route::middleware('auth')->group(function () {
