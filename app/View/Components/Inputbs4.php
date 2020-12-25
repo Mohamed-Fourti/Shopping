@@ -4,11 +4,10 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Input extends Component
+class Inputbs4 extends Component
 {
     public $name;
     public $type;
-    public $icon;
     public $label;
     public $required;
     public $autofocus;
@@ -19,11 +18,10 @@ class Input extends Component
      *
      * @return void
      */
-    public function __construct($name, $type, $icon, $label, $value = '', $required = false, $autofocus = false)
+    public function __construct($name, $type, $label, $value = '', $required = false, $autofocus = false)
     {
         $this->name = $name;
         $this->type = $type;
-        $this->icon = $icon;
         $this->label = $label;
         $this->value = $value;
         $this->required = $required;
@@ -37,6 +35,6 @@ class Input extends Component
      */
     public function render()
     {
-        return view('components.input');
+        return view('components.inputbs4');
     }
 }
