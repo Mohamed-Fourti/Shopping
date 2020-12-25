@@ -133,6 +133,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'tax' => [
+            'regex' => 'La valeur de la taxe doit être un nombre décimal avec au maximum 2 décimales',
+        ],
     ],
 
     'values' => [
@@ -184,5 +187,6 @@ return [
         'size'                  => 'taille',
         'professionnal'         => 'adresse professionnelle',
         'company'               => 'raison sociale',
+        'tax'                   => 'taxe',
     ],
 ];

@@ -15,4 +15,9 @@ return [
     'shop' => [
         'edit' => 'Gestion de la boutique',
     ],
+    'pays' => [
+        'index' => 'Gestion des pays',
+        'edit' => 'Modification d\'un pays',
+        'create' => 'Création d\'un pays',
+    ],
 ];
