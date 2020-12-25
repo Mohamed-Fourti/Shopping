@@ -41,5 +41,10 @@ class AppServiceProvider extends ServiceProvider
                 'cartTotal' => Cart::getTotal(),
             ]);
         });
+        
+        View::composer('back.layout', function ($view) {
+            $title = config('titles.' . Route::currentRouteName());
+            $view->with(compact('title'));
+        });
     }
 }
