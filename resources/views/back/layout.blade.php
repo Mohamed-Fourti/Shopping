@@ -60,7 +60,11 @@
                 'etats.index', 
                 'etats.edit', 
                 'etats.create', 
-                'etats.destroy.alert'
+                'etats.destroy.alert',
+                'pages.index',
+                'pages.edit',
+                'pages.create',
+                'pages.destroy.alert'
             ) }}">
             <a href="#" class="nav-link {{ currentRouteActive(
                 'shop.edit',
@@ -73,7 +77,11 @@
                 'etats.index', 
                 'etats.edit', 
                 'etats.create', 
-                'etats.destroy.alert'
+                'etats.destroy.alert',
+                'pages.index',
+                'pages.edit',
+                'pages.create',
+                'pages.destroy.alert'
               ) }}">
               <i class="nav-icon fas fa-cogs"></i>
               <p>
@@ -102,6 +110,15 @@
                   'pays.create'
                 )">
                 Pays
+              </x-menu-item>
+
+              <x-menu-item :href="route('pages.index')" :sub=true :active="currentRouteActive(
+                  'pages.index',
+                  'pages.edit',
+                  'pages.create',
+                  'pages.destroy.alert'
+                )">
+                Pages
               </x-menu-item>
 
               <li class="nav-item has-treeview {{ menuOpen('plages.edit', 'colissimos.edit') }}">

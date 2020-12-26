@@ -34,6 +34,9 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function (
 
     Route::resource('etats', 'StateController')->except('show');
     Route::name('etats.destroy.alert')->get('etats/{etat}', 'StateController@alert');
+
+    Route::resource('pages', 'PageController')->except('show');
+    Route::name('pages.destroy.alert')->get('pages/{page}', 'PageController@alert');
 });
 
 // Accueil boutique et panier
