@@ -31,6 +31,9 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function (
 
     Route::name('colissimos.edit')->get('colissimos/modification', 'ColissimoController@edit');
     Route::name('colissimos.update')->put('colissimos', 'ColissimoController@update');
+
+    Route::resource('etats', 'StateController')->except('show');
+    Route::name('etats.destroy.alert')->get('etats/{etat}', 'StateController@alert');
 });
 
 // Accueil boutique et panier
