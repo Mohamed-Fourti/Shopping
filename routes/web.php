@@ -55,6 +55,10 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function (
     ]);
     Route::name('orders.invoice')->post('commandes/invoice/{commande}', 'OrderController@invoice');
     Route::name('orders.updateNumber')->put('commandes/updateNumber/{commande}', 'OrderController@updateNumber');
+
+    Route::name('maintenance.edit')->get('maintenance/modification', 'MaintenanceController@edit');
+    Route::name('maintenance.update')->put('maintenance', 'MaintenanceController@update');
+    Route::name('cache.update')->put('cache', 'MaintenanceController@cache');
 });
 
 // Accueil boutique et panier
