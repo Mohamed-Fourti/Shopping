@@ -37,6 +37,9 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function (
 
     Route::resource('pages', 'PageController')->except('show');
     Route::name('pages.destroy.alert')->get('pages/{page}', 'PageController@alert');
+
+    Route::resource('produits', 'ProductController')->except('show');
+    Route::name('produits.destroy.alert')->get('produits/{produit}', 'ProductController@alert');
 });
 
 // Accueil boutique et panier
