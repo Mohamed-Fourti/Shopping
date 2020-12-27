@@ -47,6 +47,14 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function (
         'index' => 'back.adresses.index',
         'show' => 'back.adresses.show',
     ])->only(['index', 'show']);
+
+    Route::resource('commandes', 'OrderController')->only(['index', 'show', 'update'])->names([
+        'index' => 'orders.index',
+        'show' => 'orders.show',
+        'update' => 'orders.update',
+    ]);
+    Route::name('orders.invoice')->post('commandes/invoice/{commande}', 'OrderController@invoice');
+    Route::name('orders.updateNumber')->put('commandes/updateNumber/{commande}', 'OrderController@updateNumber');
 });
 
 // Accueil boutique et panier
