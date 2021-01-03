@@ -592,7 +592,7 @@
                   </tr>
                   <tr>
                     <td align="justify" style="font-size:0px;padding:10px 25px;padding-right:25px;padding-bottom:20px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:Helvetica;font-size:12px;line-height:1;text-align:justify;color:#dddddd;">{!! $page->text !!}</div>
+                      <div style="font-family:Helvetica;font-size:12px;line-height:1;text-align:justify;color:#dddddd;">{!! $page !!}</div>
                     </td>
                   </tr>
                 </table>

@@ -21,7 +21,7 @@ class Ordered extends Mailable
      *
      * @return void
      */
-    public function __construct(Shop $shop, Order $order, Page $page)
+    public function __construct(  $shop,  $order,  $page)
     {
         $this->shop = $shop;
         $this->order = $order;
