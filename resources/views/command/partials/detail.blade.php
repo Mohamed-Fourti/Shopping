@@ -5,7 +5,7 @@
     <div class="col m6 s12">
       {{ $item->name }} ({{ $item->quantity }} @if($item->quantity > 1) exemplaires) @else exemplaire) @endif
     </div>
-    <div class="col m6 s12"><strong>{{ number_format($item->total_price_gross ?? ($tax > 0 ? $item->price : $item->price / 1.2) * $item->quantity, 2, ',', ' ') }} €</strong></div>
+    <div class="col m6 s12"><strong>{{ number_format($item->total_price_gross ?? ($tax > 0 ? $item->price : $item->price / 1.2) * $item->quantity, 2, ',', ' ') }} DT</strong></div>
   </div>
 @endforeach
 <hr><br>
@@ -14,7 +14,7 @@
     Livraison en Colissimo
   </div>
   <div class="col s6">
-    <strong>{{ number_format($shipping, 2, ',', ' ') }} €</strong>
+    <strong>{{ number_format($shipping, 2, ',', ' ') }} DT</strong>
   </div>
 </div>
 @if($tax > 0)
@@ -23,7 +23,7 @@
       TVA à {{ $tax * 100 }}%
     </div>
     <div class="col s6">
-      <strong>{{ number_format($total / (1 + $tax) * $tax, 2, ',', ' ') }} €</strong>
+      <strong>{{ number_format($total / (1 + $tax) * $tax, 2, ',', ' ') }} DT</strong>
     </div>
   </div>
 @endif
@@ -32,6 +32,6 @@
     Total TTC
   </div>
   <div class="col s6">
-    <strong>{{ number_format($total + $shipping, 2, ',', ' ') }} €</strong>
+    <strong>{{ number_format($total + $shipping, 2, ',', ' ') }} DT</strong>
   </div>
 </div>

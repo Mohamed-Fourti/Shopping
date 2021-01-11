@@ -245,7 +245,7 @@
                   </tr>
                   <tr>
                     <td align="left" style="font-size:0px;padding:10px 25px;padding-right:25px;padding-bottom:30px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:Helvetica;font-size:18px;line-height:1;text-align:left;color:#FFFFFF;">Total : {{ number_format($order->totalOrder, 2, ',', ' ') }} €</div>
+                      <div style="font-family:Helvetica;font-size:18px;line-height:1;text-align:left;color:#FFFFFF;">Total : {{ number_format($order->totalOrder, 2, ',', ' ') }} DT</div>
                     </td>
                   </tr>
                 </table>

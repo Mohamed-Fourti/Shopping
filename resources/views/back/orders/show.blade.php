@@ -86,7 +86,7 @@
               <div class="col m6 s12">
                 {{ $item->name }} ({{ $item->quantity }} @if($item->quantity > 1) exemplaires) @else exemplaire) @endif
               </div>
-              <div class="col m6 s12"><strong>{{ number_format($item->total_price_gross, 2, ',', ' ') }} €</strong></div>
+              <div class="col m6 s12"><strong>{{ number_format($item->total_price_gross, 2, ',', ' ') }} DT</strong></div>
             </div>
           @endforeach
           <hr><br>
@@ -95,7 +95,7 @@
               Total HT
             </div>
             <div class="col s6">
-              <strong>{{ number_format($order->ht, 2, ',', ' ') }} €</strong>
+              <strong>{{ number_format($order->ht, 2, ',', ' ') }} DT</strong>
             </div>
           </div>
           <br>
@@ -104,7 +104,7 @@
               Livraison en Colissimo
             </div>
             <div class="col s6">
-              <strong>{{ number_format($order->shipping, 2, ',', ' ') }} €</strong>
+              <strong>{{ number_format($order->shipping, 2, ',', ' ') }} DT</strong>
             </div>
           </div>
           <br>
@@ -114,7 +114,7 @@
                 TVA à {{ $order->tax * 100 }} %
               </div>
               <div class="col s6">
-                <strong>{{ number_format($order->tva, 2, ',', ' ') }} €</strong>
+                <strong>{{ number_format($order->tva, 2, ',', ' ') }} DT</strong>
               </div>
             </div>
             <br>
@@ -124,7 +124,7 @@
               Total TTC
             </div>
             <div class="col s6">
-              <strong>{{ number_format($order->totalOrder, 2, ',', ' ') }} €</strong>
+              <strong>{{ number_format($order->totalOrder, 2, ',', ' ') }} DT</strong>
             </div>
           </div>
         </div>

@@ -25,7 +25,7 @@ class OrdersDataTable extends DataTable
                 return $order->updated_at->format('d/m/Y');
             })
             ->editColumn('total', function ($order) {
-                return number_format($order->totalOrder, 2, ',', ' ') . ' €';
+                return number_format($order->totalOrder, 2, ',', ' ') . ' DT';
             })
             ->editColumn('payment', function ($order) {
                 return $order->payment_text;

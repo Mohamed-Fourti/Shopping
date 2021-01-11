@@ -55,7 +55,7 @@ public function update(Request $request)
     public function cache(Request $request)
     {
         Artisan::call($request->has('config') ? 'config:cache' : 'config:clear');
-        Artisan::call($request->has('route') ? 'route:cache' : 'route:clear');
+        Artisan::call($request->has('route') ? 'config:cache' : 'config:cache');
 
         $request->session()->flash('alert', config('messages.cacheupdated'));
 

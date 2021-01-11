@@ -29,7 +29,8 @@
 
   <nav>
     <div class="nav-wrapper">
-      <a href="{{ route('home') }}" class="brand-logo"><img src="/images/logo1.png" width="210px" alt="Logo"></a>
+      <a href="{{ route('home') }}" class="brand-logo" style="  margin-left: 8px;
+  margin-top: 8px;"><img src="/images/logo1.png" width="210px" alt="Logo"></a>
       <a href="{{ route('home') }}" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
       @if($cartCount)

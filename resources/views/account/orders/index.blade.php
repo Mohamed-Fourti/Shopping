@@ -23,7 +23,7 @@
               <tr>
                 <td>{{ $order->reference }}</td>
                 <td>{{ $order->created_at->calendar() }}</td>
-                <td>{{ number_format($order->total_order, 2, ',', ' ') }} €</td>
+                <td>{{ number_format($order->total_order, 2, ',', ' ') }} DT</td>
                 <td>{{ $order->payment_text }}</td>
                 <td><span class="badge new {{ $order->state->color }}" data-badge-caption="{{ $order->state->name }}"></span></td>
                 <td><a href="{{ route('commandes.show', $order->id) }}" class="waves-effect waves-light btn-small">Détails</a></td>

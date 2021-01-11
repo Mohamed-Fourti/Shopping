@@ -93,7 +93,7 @@
       @if($order->state->slug === 'cheque')
         <p>Veuillez nous envoyer un chèque avec :</p>
         <ul>
-          <li>- montant du règlement : <strong>{{ number_format($order->total * (1 + $order->tax) + $order->shipping, 2, ',', ' ') }} €</strong></li>     
+          <li>- montant du règlement : <strong>{{ number_format($order->total * (1 + $order->tax) + $order->shipping, 2, ',', ' ') }} DT</strong></li>     
           <li>- payable à l'ordre de <strong>{{ $shop->name }}</strong></li>
           <li>- à envoyer à <strong>{{ $shop->address }}</strong></li>
           <li>- n'oubliez pas d'indiquer votre référence de commande <strong>{{ $order->reference }}</strong></li>
@@ -120,7 +120,7 @@
       @elseif($order->state->slug === 'virement')
         <p>Veuillez effectuer un virement sur notre compte :</p>
         <ul>
-          <li>- montant du virement : <strong>{{ number_format($order->total * (1 + $order->tax) + $order->shipping, 2, ',', ' ') }} €</strong></li>
+          <li>- montant du virement : <strong>{{ number_format($order->total * (1 + $order->tax) + $order->shipping, 2, ',', ' ') }} DT</strong></li>
           <li>- titulaire : <strong>{{ $shop->holder }}</strong></li>  
           <li>- BIC : <strong>{{ $shop->bic }}</strong></li>
           <li>- IBAN : <strong>{{ $shop->iban }}</strong></li>

@@ -265,20 +265,20 @@
                           <th style="padding: 0 15px;">Prix TTC</th>
                         </tr> @foreach ($order->products as $item) <tr>
                           <td style="padding: 0 15px 0 0;">{{ $item->name }}&nbsp({{ $item->quantity }}&nbsp @if($item->quantity > 1) exemplaires) @else exemplaire) @endif</td>
-                          <td style="padding: 0 15px;">{{ number_format($item->total_price_gross, 2, ',', ' ') }} €</td>
+                          <td style="padding: 0 15px;">{{ number_format($item->total_price_gross, 2, ',', ' ') }} DT</td>
                         </tr> @endforeach <tr>
                           <td style="padding: 15px;"></td>
                           <td style="padding: 15px;"></td>
                         </tr>
                         <tr style="background-color: #25a;">
                           <td style="padding: 10px;">Livraison en Colissimo</td>
-                          <td style="padding: 0 10px 0 10px;">{{ number_format($order->shipping, 2, ',', ' ') }} €</td>
+                          <td style="padding: 0 10px 0 10px;">{{ number_format($order->shipping, 2, ',', ' ') }} DT</td>
                         </tr> @if($order->tax > 0) <tr style="background-color: #25a">
                           <td style="padding: 10px;">TVA à {{ $order->tax * 100 }}%</td>
-                          <td style="padding: 0 10px 0 10px;">{{ number_format($order->tva, 2, ',', ' ') }} €</td>
+                          <td style="padding: 0 10px 0 10px;">{{ number_format($order->tva, 2, ',', ' ') }} DT</td>
                         </tr> @endif <tr style="background-color: #25a">
                           <td style="padding: 10px;">Total TTC</td>
-                          <td style="padding: 0 10px 0 10px;">{{ number_format($order->totalOrder, 2, ',', ' ') }} €</td>
+                          <td style="padding: 0 10px 0 10px;">{{ number_format($order->totalOrder, 2, ',', ' ') }} DT</td>
                         </tr>
                       </table>
                     </td>
@@ -476,7 +476,7 @@
                     <td align="left" style="font-size:0px;padding:10px 25px;padding-top:10px;padding-right:25px;padding-left:25px;word-break:break-word;">
                       <div style="font-family:Helvetica;font-size:16px;line-height:1;text-align:left;color:#FFFFFF;">@if($order->payment === 'cheque') <p>Veuillez nous envoyer un chèque avec :</p>
                         <ul>
-                          <li>montant du règlement : <strong>{{ number_format($order->totalOrder, 2, ',', ' ') }} €</strong></li>
+                          <li>montant du règlement : <strong>{{ number_format($order->totalOrder, 2, ',', ' ') }} DT</strong></li>
                           <li>payable à l'ordre de <strong>{{ $shop->name }}</strong></li>
                           <li>à envoyer à <strong>{{ $shop->address }}</strong></li>
                           <li>n'oubliez pas d'indiquer votre référence de commande <strong>{{ $order->reference }}</strong></li>
@@ -487,7 +487,7 @@
                         <p>Vous pouvez aussi nous le transmettre par e-mail à cette adresse : <strong>{{ $shop->email }}</strong></p>
                         <p>N'oubliez pas d'indiquer votre référence de commande <strong>{{ $order->reference }}</strong>.</p> @if($order->pick) <p><strong>Vous pourrez venir chercher votre commande dès réception du mandat.</strong></p> @else <p><strong>Votre commande vous sera envoyée dès réception du mandat.</strong>.</p> @endif Pour toute question ou information complémentaire merci de contacter notre <a href="mailto:{{ $shop->email }}">support client</a>. @endif @if($order->payment === 'virement') <p>Veuillez effectuer un virement sur notre compte :</p>
                         <ul>
-                          <li>montant du virement : <strong>{{ number_format($order->totalOrder, 2, ',', ' ') }} €</strong></li>
+                          <li>montant du virement : <strong>{{ number_format($order->totalOrder, 2, ',', ' ') }} DT</strong></li>
                           <li>titulaire : <strong>{{ $shop->holder }}</strong></li>
                           <li>BIC : <strong>{{ $shop->bic }}</strong></li>
                           <li>IBAN : <strong>{{ $shop->iban }}</strong></li>

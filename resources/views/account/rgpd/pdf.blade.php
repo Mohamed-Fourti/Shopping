@@ -90,7 +90,7 @@
           <tr>
             <td>{{ $order->reference }}</td>
             <td>{{ $order->created_at->calendar() }}</td>
-            <td>{{ number_format($order->total + $order->shipping, 2, ',', ' ') }} €</td>
+            <td>{{ number_format($order->total + $order->shipping, 2, ',', ' ') }} DT</td>
             <td>{{ $order->payment_text }}</td>
             <td>{{ $order->state->name }}</td>
           </tr>
@@ -101,16 +101,16 @@
         @foreach ($order->products as $item)
           <tr>
             <td>{{ $item->name }} ({{ $item->quantity }} @if($item->quantity > 1) exemplaires) @else exemplaire) @endif</td>
-            <td>{{ number_format($item->total_price_gross, 2, ',', ' ') }} €</td>
+            <td>{{ number_format($item->total_price_gross, 2, ',', ' ') }} DT</td>
           </tr>
         @endforeach
         <tr>
           <td>Livraison en Colissimo</td>
-          <td>{{ number_format($order->shipping, 2, ',', ' ') }}€</td>
+          <td>{{ number_format($order->shipping, 2, ',', ' ') }}DT</td>
         </tr>
         <tr>
           <td>Total TTC (TVA à {{ $item->tax * 100 }} %)</td>
-          <td>{{ number_format($order->total + $order->shipping, 2, ',', ' ') }} €</td>
+          <td>{{ number_format($order->total + $order->shipping, 2, ',', ' ') }} DT</td>
         </tr>
       </table>
       <hr>

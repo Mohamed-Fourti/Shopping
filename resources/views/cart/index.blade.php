@@ -17,7 +17,7 @@
                     @csrf
                     @method('PUT')
                     <div class="col m6 s12">{{ $item->name }}</div>
-                    <div class="col m3 s12"><strong>{{ number_format($item->quantity * $item->price, 2, ',', ' ') }} €</strong></div>
+                    <div class="col m3 s12"><strong>{{ number_format($item->quantity * $item->price, 2, ',', ' ') }} DT</strong></div>
                     <div class="col m2 s12">
                       <input name="quantity" type="number" style="height: 2rem" min="1" value="{{ $item->quantity }}">
                     </div>
@@ -35,7 +35,7 @@
                   Total TTC (hors livraison)
                 </div>
                 <div class="col s6">
-                  <strong>{{ number_format($total, 2, ',', ' ') }} €</strong>
+                  <strong>{{ number_format($total, 2, ',', ' ') }} DT</strong>
                 </div>
               </div>
             @else

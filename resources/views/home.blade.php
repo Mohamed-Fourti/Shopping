@@ -44,7 +44,7 @@
           <div class="card-content center-align">
             <p>{{ $product->name }}</p>
             @if($product->quantity)
-              <p><strong>{{ number_format($product->price, 2, ',', ' ') }} € TTC</strong></p>
+              <p><strong>{{ number_format($product->price, 2, ',', ' ') }} DT TTC</strong></p>
             @else
               <p class="red-text"><strong>Produit en rupture de stock</strong></p>
             @endif

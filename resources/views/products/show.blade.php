@@ -8,7 +8,7 @@
       <div class="modal-content center-align">
         <h5>Produit ajouté au panier avec succès</h5>
         <hr>
-        <p>Il y a {{ $cartCount }} @if($cartCount > 1) articles @else article @endif dans votre panier pour un total de <strong>{{ number_format($cartTotal, 2, ',', ' ') }} € TTC</strong> hors frais de port.</p>
+        <p>Il y a {{ $cartCount }} @if($cartCount > 1) articles @else article @endif dans votre panier pour un total de <strong>{{ number_format($cartTotal, 2, ',', ' ') }} DT TTC</strong> hors frais de port.</p>
         <p><em>Vous avez la possibilité de venir chercher vos produits sur place, dans ce cas vous cocherez la case correspondante lors de la confirmation de votre commande et aucun frais de port ne vous sera facturé.</em></p>
         <div class="modal-footer">     
           <button class="modal-close btn waves-effect waves-light left" id="continue">
@@ -29,7 +29,7 @@
     </div>
     <div class="col s12 m6">
       <h4>{{ $produit->name }}</h4>
-      <p><strong>{{ number_format($produit->price, 2, ',', ' ') }} € TTC</strong></p>
+      <p><strong>{{ number_format($produit->price, 2, ',', ' ') }} DT TTC</strong></p>
       <p>{{ $produit->description }}</p>
       <form  method="POST" action="{{ route('panier.store') }}">
         @csrf
